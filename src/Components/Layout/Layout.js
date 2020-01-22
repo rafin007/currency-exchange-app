@@ -1,12 +1,15 @@
 import React from 'react';
+import classes from './Layout.scss';
+
+import Sidebar from '../Sidebar/Sidebar';
+import Main from '../../Containers/Main/Main';
 
 const Layout = props => {
     return (
-        <main>
-            <div>
-                <h1 className="header" >A text header</h1>
-            </div>
-        </main>
+        <div className={classes.Layout}>
+            <Sidebar />
+            <Main />
+        </div>
     );
 }
 

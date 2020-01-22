@@ -1,4 +1,10 @@
-.header {
-    font-size: 60px;
-    color: royalblue;
+.Layout {
+    width: 80%;
+    height: 70rem;
+    background-color: #fff;
+    display: flex;
+    margin: auto;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 2rem rgba(#000, 0.8);
+    overflow: hidden;
 }

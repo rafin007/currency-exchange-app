@@ -1,0 +1,45 @@
+.NavigationItems {
+    margin-top: 5rem;
+    list-style: none;
+    text-align: center;
+}
+
+/* Blend */
+nav.Blend ul li {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+nav.Blend ul li:hover {
+    color: #fff;
+}
+
+nav.Blend ul li:before,
+nav.Blend ul li:after {
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background: var(--color-dark-2);
+    transition: all .5s;
+    margin: auto;
+    content: '.';
+    color: transparent;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+nav.Blend ul li:before {
+    left: 0;
+}
+
+nav.Blend ul li:after {
+    right: 0;
+}
+
+nav.Blend ul li:hover:after,
+nav.Blend ul li:hover:before {
+    width: 100%;
+}

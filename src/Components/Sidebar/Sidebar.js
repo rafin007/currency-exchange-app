@@ -7,6 +7,9 @@ const Sidebar = props => {
     return (
         <div className={classes.Sidebar}>
             <NavigationItems />
+            <div className={classes.credits}>
+                <p>Created By Arefin</p>
+            </div>
         </div>
     );
 }

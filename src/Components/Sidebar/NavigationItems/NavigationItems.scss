@@ -1,7 +1,11 @@
 .NavigationItems {
-    margin-top: 5rem;
+    margin-top: 12rem;
     list-style: none;
     text-align: center;
+}
+
+nav {
+    margin-bottom: auto;
 }
 
 /* Blend */
@@ -42,4 +46,11 @@ nav.Blend ul li:after {
 nav.Blend ul li:hover:after,
 nav.Blend ul li:hover:before {
     width: 100%;
+}
+
+.icon {
+    height: 2rem;
+    width: 2rem;
+    fill: currentColor;
+    margin-right: 4rem;
 }

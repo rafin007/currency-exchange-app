@@ -1,0 +1,9 @@
+.Currency {
+    width: 100%;
+    height: 8rem;
+    background-color: var(--color-light-1);
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

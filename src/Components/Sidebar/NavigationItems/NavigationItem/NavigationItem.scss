@@ -3,13 +3,18 @@
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: 300;
-    padding: 2rem;
     letter-spacing: .5rem;
 
     a,
     a:visited {
         color: #fff;
         text-decoration: none;
+        // display: block;
+        padding: 2rem;
+        transition: all .3s ease-out;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
     &:not(:last-child) {
@@ -19,7 +24,5 @@
 }
 
 .NavigationItem a.active {
-    height: 100%;
-    width: 100%;
     background-color: var(--color-dark-2);
 }

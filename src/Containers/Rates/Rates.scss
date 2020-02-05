@@ -1,0 +1,41 @@
+.icon {
+    height: 4.5rem;
+    width: 4.5rem;
+    fill: #fff;
+}
+
+.search__launcher {
+    display: none;
+}
+
+.SearchBackground {
+    position: absolute;
+    top: 85%;
+    left: 90%;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-light-1);
+    border: none;
+    transition: transform .7s;
+    z-index: 1500;
+}
+
+.search__launcher:checked~.SearchBackground {
+    transform: scale(300);
+}
+
+.SearchInput {
+    display: none;
+    // width: 0;
+}
+
+.search__launcher:checked~.SearchBackground .SearchInput {
+    // position: absolute;
+    // top: 20%;
+    // left: 5%;
+    display: inline-block;
+    line-height: 0;
+    height: 0.1px;
+    width: 0.1px;
+}

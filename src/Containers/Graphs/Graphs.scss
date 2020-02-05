@@ -1,0 +1,72 @@
+.Graphs {
+
+    .dropDowns {
+        margin: 5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* Reset Select */
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: var(--color-light-2);
+        background-image: none;
+    }
+
+    /* Remove IE arrow */
+    select::-ms-expand {
+        display: none;
+    }
+
+    /* Custom Select */
+    .select {
+        position: relative;
+        display: flex;
+        width: 25rem;
+        height: 4rem;
+        line-height: 3;
+        background: #000;
+        overflow: hidden;
+        border-radius: 10rem;
+    }
+
+    select {
+        flex: 1;
+        padding: 0 1.5rem;
+        color: var(--color-dark-1);
+        cursor: pointer;
+    }
+
+    /* Arrow */
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: .5rem 1rem;
+        background: var(--color-light-1);
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+    }
+
+    /* Transition */
+    .select:hover::after {
+        color: var(--charcoal-black);
+    }
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: var(--color-dark-1);
+    }
+}

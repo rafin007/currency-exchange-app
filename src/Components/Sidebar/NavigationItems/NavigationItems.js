@@ -16,12 +16,12 @@ const NavigationItems = props => {
                         Rates
                     </span>
                 </NavigationItem>
-                <NavigationItem link="/graph" >
+                <NavigationItem link="/compare" >
                     <svg className={classes.icon} >
                         <use xlinkHref={`${sprite}#icon-area-graph`} ></use>
                     </svg>
                     <span>
-                        Graphs
+                        Compare
                     </span>
                 </NavigationItem>
                 <NavigationItem link="/convert" >

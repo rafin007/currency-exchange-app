@@ -1,5 +1,8 @@
 .Main {
     flex: 1;
     // background-color: #eee;
-    background-color: var(--color-light-2);
+    // background-color: var(--color-grey-light-1);
+    background-color: #fff;
+    position: relative;
+    overflow-y: scroll;
 }

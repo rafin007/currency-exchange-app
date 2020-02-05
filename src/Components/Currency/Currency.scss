@@ -1,9 +1,72 @@
 .Currency {
     width: 100%;
     height: 8rem;
-    background-color: var(--color-light-1);
+    // background-color: var(--color-light-1);
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    padding-left: 6rem;
+    transition: transform 0.3s;
 
     &:not(:last-child) {
         margin-bottom: 3rem;
+    }
+
+    &__nation {
+        height: 8.5rem;
+        width: 8.5rem;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3rem;
+        justify-content: space-evenly;
+        width: 70%;
+        height: 100%;
+        color: var(--charcoal-black);
+        margin-right: auto;
+    }
+
+    &__abbreviation {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        letter-spacing: .3rem;
+        font-weight: 300;
+        padding-bottom: .8rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &__comparison {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    &__full {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    &:hover>&__cross {
+        width: 3rem;
+    }
+
+    &__cross {
+        height: 3rem;
+        width: 0rem;
+        margin-right: .5rem;
+        cursor: pointer;
+        fill: var(--charcoal-black);
+        transition: all .5s;
+    }
+
+    .Nation__holder {
+        border-radius: 50%;
+        height: 5rem;
+        width: 5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

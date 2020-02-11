@@ -6,3 +6,5 @@ export const SAVE_RATES_FAILED = 'SAVE_RATES_FAILED';
 
 export const ADD_NATION = 'ADD_NATION';
 export const DELETE_NATION = 'DELETE_NATION';
+
+export const SAVE_BASE_CURRENCY = 'SAVE_BASE_CURRENCY';

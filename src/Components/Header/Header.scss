@@ -6,13 +6,18 @@
     // box-shadow: 0 .3rem 1rem rgba(#000, .1);
     border-bottom: 1px solid #ccc;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
 }
 
+// .BaseCurrency {
+//     // margin-left: 2rem;
+//     // margin-right: auto;
+// }
+
 .Search {
 
-    width: 60rem;
+    width: 40rem;
     display: flex;
     justify-content: flex-end;
     margin-right: 2rem;
@@ -27,7 +32,7 @@
 
     &__bar {
         font-size: 1.5rem;
-        width: 45rem;
+        width: 30rem;
         border-radius: 10rem;
         border: none;
         height: 3.4rem;

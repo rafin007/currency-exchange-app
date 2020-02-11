@@ -1,1 +1,1 @@
-export { retrieveRates, searching, addNation, deleteNation } from './currencies';
+export { retrieveRates, searching, addNation, deleteNation, saveBaseCurrency } from './currencies';

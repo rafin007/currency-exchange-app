@@ -7,7 +7,8 @@ const intialState = {
     error: null,
     searchedRates: [],
     searchedSymbols: [],
-    nations: []
+    nations: [],
+    baseCurrency: null
 }
 
 const reducer = (state = intialState, action) => {
@@ -55,6 +56,12 @@ const reducer = (state = intialState, action) => {
             return {
                 ...state,
                 error: action.error
+            }
+
+        case actionTypes.SAVE_BASE_CURRENCY:
+            return {
+                ...state,
+                baseCurrency: action.currency
             }
 
         default:

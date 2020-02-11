@@ -1,3 +1,17 @@
 .Currencies {
     margin-top: 3rem;
+
+    .instruction {
+        font-size: 1.8rem;
+        color: var(--charcoal-black);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        margin-bottom: 1rem;
+
+        span {
+            color: var(--color-dark-1);
+            font-weight: 600;
+        }
+    }
 }

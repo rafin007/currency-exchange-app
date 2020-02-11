@@ -1,16 +1,12 @@
 import * as actionTypes from './actionTypes';
-import { axiosLatest, axiosSymbols } from '../../axios-requests';
+import { axiosLatest, axiosSymbols, axiosGetRateByBaseCurrency } from '../../axios-requests';
+
+import axios from 'axios';
 
 export const searching = (value) => {
     return {
         type: actionTypes.SEARCHING,
         value
-    };
-};
-
-const searchingWait = () => {
-    return {
-        type: actionTypes.SEARCHING_WAIT
     };
 };
 
@@ -56,3 +52,15 @@ export const retrieveRates = () => {
         }
     };
 };
+
+export const saveBaseCurrency = (currency) => {
+    return {
+        type: actionTypes.SAVE_BASE_CURRENCY,
+        currency
+    }
+}
+
+
+//---------------------- NEW API -----------------------------
+
+const API_KEY = 'cadab762875dc10f460a';

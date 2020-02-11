@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import Chart from 'chart.js';
 import classes from './Graphs.scss';
 
+import { useSelector } from 'react-redux';
+
 import sprite from '../../assets/sprite.svg';
+import DropDown from '../../Components/DropDown/DropDown';
 
 const Graphs = props => {
 
@@ -65,30 +68,20 @@ const Graphs = props => {
         });
     })
 
+    const symbols = useSelector(state => state.symbols);
+
     return (
         <div className={classes.Graphs} >
             <div className={classes.dropDowns} >
-                <div className={classes.select}>
-                    <select name="slct" id="slct">
-                        <option selected disabled>Choose an option</option>
-                        <option value="1">USD</option>
-                        <option value="2">CAD</option>
-                        <option value="3">BDT</option>
-                    </select>
-                </div>
+
+                <DropDown symbols={symbols} ins="Choose an option" />
 
                 <svg className={classes.Graphs__icon} >
                     <use xlinkHref={`${sprite}#icon-swap`} ></use>
                 </svg>
 
-                <div className={classes.select}>
-                    <select name="slct" id="slct">
-                        <option selected disabled>Choose an option</option>
-                        <option value="1">GBP</option>
-                        <option value="2">INR</option>
-                        <option value="3">SGD</option>
-                    </select>
-                </div>
+                <DropDown symbols={symbols} ins="Choose an option" />
+
             </div>
 
             <div className={classes.Chart}>

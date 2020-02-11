@@ -10,6 +10,10 @@ export const axiosSymbols = axios.create({
     baseURL: `http://data.fixer.io/api/symbols?access_key=${API_KEY}`
 });
 
+export const axiosGetRateByBaseCurrency = axios.create({
+    baseURL: `http://data.fixer.io/api/latest?access_key=${API_KEY}&base=`
+});
+
 
 
 // export default instance;

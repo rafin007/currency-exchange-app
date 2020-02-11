@@ -6,15 +6,14 @@
     display: flex;
     align-items: center;
     padding-left: 6rem;
-    transition: transform 0.3s;
 
     &:not(:last-child) {
         margin-bottom: 3rem;
     }
 
     &__nation {
-        height: 8.5rem;
-        width: 8.5rem;
+        height: 10rem;
+        width: 10rem;
     }
 
     &__details {

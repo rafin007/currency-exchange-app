@@ -1,0 +1,70 @@
+.Convert {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10%;
+
+    &__inputHolder {}
+
+    &__input {
+        font-size: 1.5rem;
+        width: 25rem;
+        border-radius: 10rem;
+        border: none;
+        height: 3.4rem;
+        padding: 1rem 2.5rem;
+        // padding-left: 5rem;
+        transition: all 0.3s;
+        // margin-left: -3.5rem;
+        color: #222;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: inset 0 .1rem .5rem rgba(#000, .2);
+
+        &:focus {
+            background-color: #ededed;
+            outline: none;
+        }
+    }
+
+    &__currenciesHolder {
+        width: 50%;
+        height: 100%;
+        background-color: #fff;
+        // margin-top: 30%;
+    }
+
+    &__currencies {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 5rem;
+        border-bottom: 1px solid #ccc;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: var(--color-dark-1);
+    }
+
+    .currencies__header {
+        margin-left: 3rem;
+        margin-right: auto;
+    }
+
+    .currencies__value {
+        // margin-left: 18rem;
+    }
+}
+
+.instruction {
+    font-size: 1.8rem;
+    color: var(--charcoal-black);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    margin-bottom: 1rem;
+
+    span {
+        color: var(--color-dark-1);
+        font-weight: 600;
+    }
+}

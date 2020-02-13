@@ -6,10 +6,7 @@
     display: flex;
     align-items: center;
     padding-left: 6rem;
-
-    &:not(:last-child) {
-        margin-bottom: 3rem;
-    }
+    margin-bottom: 3rem;
 
     &__nation {
         height: 10rem;
@@ -47,7 +44,7 @@
     }
 
     &:hover>&__cross {
-        width: 3rem;
+        width: 2.5rem;
     }
 
     &__cross {

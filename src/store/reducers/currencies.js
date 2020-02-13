@@ -1,14 +1,17 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const intialState = {
-    rates: [],
     symbols: [],
     loading: false,
     error: null,
     searchedRates: [],
     searchedSymbols: [],
     nations: [],
-    baseCurrency: null
+    baseCurrency: null,
+    limitedRates: [],
+    firstCurrency: null,
+    secondCurrency: null,
+    dates: []
 }
 
 const reducer = (state = intialState, action) => {
@@ -48,8 +51,14 @@ const reducer = (state = intialState, action) => {
             return {
                 ...state,
                 error: null,
-                rates: state.rates.concat(action.rates),
                 symbols: state.symbols.concat(action.symbols)
+            }
+
+        case actionTypes.SAVE_LIMITED_RATES:
+            // console.log(arr);
+            return {
+                ...state,
+                limitedRates: state.limitedRates.concat(action.rates)
             }
 
         case actionTypes.SAVE_RATES_FAILED:
@@ -62,6 +71,24 @@ const reducer = (state = intialState, action) => {
             return {
                 ...state,
                 baseCurrency: action.currency
+            }
+
+        case actionTypes.SAVE_FIRST_CURRENCY:
+            return {
+                ...state,
+                firstCurrency: action.currency
+            }
+
+        case actionTypes.SAVE_SECOND_CURRENCY:
+            return {
+                ...state,
+                secondCurrency: action.currency
+            }
+
+        case actionTypes.GET_RANGED_DATES:
+            return {
+                ...state,
+                dates: action.dates
             }
 
         default:

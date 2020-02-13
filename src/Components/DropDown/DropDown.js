@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './DropDown.scss';
 
+import { withRouter } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 
 import * as actions from '../../store/actions/index';
@@ -16,7 +18,17 @@ const DropDown = props => {
     }
 
     const dropDownHandler = (event) => {
-        dispatch(actions.saveBaseCurrency(event.target.value));
+        if (props.location.pathname !== '/compare') {
+            dispatch(actions.saveBaseCurrency(event.target.value));
+        }
+        else {
+            if (props.num === '1') {
+                dispatch(actions.saveFirstCurrency(event.target.value));
+            }
+            else {
+                dispatch(actions.saveSecondCurrency(event.target.value));
+            }
+        }
     }
 
     return (
@@ -29,4 +41,4 @@ const DropDown = props => {
     );
 }
 
-export default DropDown;
+export default withRouter(DropDown);

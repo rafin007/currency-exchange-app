@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import classes from './Header.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,6 +31,11 @@ const Header = props => {
         const searcher = document.querySelector(`.${classes.Header__searchResults}`);
         searcher.style.display = 'none';
     }
+
+    useEffect(() => {
+        const searcher = document.querySelector(`.${classes.Header__searchResults}`);
+        searcher.style.display = 'none';
+    }, [])
 
 
     return (

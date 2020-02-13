@@ -1,0 +1,22 @@
+.Convert {
+
+    &__currencies {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 5rem;
+        border-bottom: 1px solid #ccc;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: var(--color-dark-1);
+    }
+}
+
+.currencies__header {
+    margin-left: 3rem;
+    margin-right: auto;
+}
+
+.currencies__value {
+    // margin-left: 18rem;
+}

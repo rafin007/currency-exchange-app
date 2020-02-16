@@ -9,6 +9,7 @@ select {
     border: 0 !important;
     background: var(--color-light-2);
     background-image: none;
+    font-size: 1.3rem;
 }
 
 /* Remove IE arrow */
@@ -26,6 +27,22 @@ select::-ms-expand {
     background: #000;
     overflow: hidden;
     border-radius: 10rem;
+    text-align: center;
+
+    //770px
+    @media only screen and (max-width: 48.13em) {
+        width: 25rem;
+    }
+
+    //470px
+    @media only screen and (max-width: 29.38em) {
+        width: 20rem;
+    }
+
+    //400px
+    @media only screen and (max-width: 25em) {
+        width: 18rem;
+    }
 }
 
 select {

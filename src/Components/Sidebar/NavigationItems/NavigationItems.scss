@@ -2,13 +2,36 @@
     margin-top: 5rem;
     list-style: none;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    // 770px
+    @media only screen and (max-width: 48.13em) {
+        flex-direction: row;
+        margin-top: 0;
+        height: 100%;
+    }
 }
 
 nav {
     margin-bottom: auto;
+
+    // 770px
+    @media only screen and (max-width: 48.13em) {
+        margin-bottom: 0;
+    }
 }
 
 /* Blend */
+
+.Blend {
+
+    // 770px
+    @media only screen and (max-width: 48.13em) {
+        width: 100%;
+    }
+}
+
 nav.Blend ul li {
     position: relative;
     overflow: hidden;
@@ -53,4 +76,16 @@ nav.Blend ul li:hover:before {
     width: 2rem;
     fill: currentColor;
     margin-right: 4rem;
+
+    // 770px
+    @media only screen and (max-width: 48.13em) {
+        margin-right: 2rem;
+    }
+
+    // //440px
+    // @media only screen and (max-width: 27.5em) {
+    //     margin-right: .5rem;
+    //     height: 1.5rem;
+    //     width: 1.5rem;
+    // }
 }

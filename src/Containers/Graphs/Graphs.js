@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Chart from 'chart.js';
 import classes from './Graphs.scss';
 
@@ -16,10 +16,7 @@ const Graphs = props => {
     const firstCurrency = useSelector(state => state.firstCurrency);
     const secondCurrency = useSelector(state => state.secondCurrency);
 
-    const [shouldUpdate, setShouldUpdate] = useState(false);
-
     const dates = useSelector(state => state.dates);
-    console.log(dates);
 
     const dispatch = useDispatch();
 
@@ -29,11 +26,7 @@ const Graphs = props => {
 
     useEffect(() => {
 
-        // if (dates.length > 0) {
-        //     setShouldUpdate(true);
-        // }
-
-        let ctx = document.getElementById('myChart').getContext('2d');
+        const ctx = document.getElementById('myChart').getContext('2d');
         const myChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -60,9 +53,19 @@ const Graphs = props => {
                         }
                     }]
                 },
-                hover: false
             }
         });
+
+
+        const chart = document.getElementById('myChart');
+
+        let mq = window.matchMedia('(max-width: 31.25em)');
+
+        // if (mq.matches) {
+        //     chart.style.height = `40rem`;
+        //     chart.style.width = '100%';
+        // }
+
 
     }, [dispatch, dates])
 
@@ -98,14 +101,14 @@ const Graphs = props => {
                 <DropDown symbols={limitedRates} ins="Choose a currency" num="1" />
 
                 <svg className={classes.Graphs__icon} >
-                    <use xlinkHref={`${sprite}#icon-swap`} ></use>
+                    <use xlinkHref={`${sprite}#icon-arrow-long-right`} ></use>
                 </svg>
 
                 <DropDown symbols={limitedRates} ins="Choose a currency" num="2" />
 
             </div>
 
-            <div className={classes.Chart}>
+            <div className={classes.Chart} >
                 <canvas id="myChart" ></canvas>
             </div>
         </div>

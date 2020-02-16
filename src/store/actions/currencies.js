@@ -103,7 +103,7 @@ const getRangedDates = (dates) => {
 export const retrieveRangedDates = (startDate, endDate) => {
     return async (dispatch, getState) => {
         try {
-            const response = (await axios.get(`https://api.exchangeratesapi.io/history?base=${getState().firstCurrency}&start_at=${startDate}&end_at=${endDate}&symbols=${getState().firstCurrency},${getState().secondCurrency}`)).data.rates;
+            const response = (await axios.get(`https://api.exchangeratesapi.io/history?base=${getState().firstCurrency === 'EUR' ? 'USD' : getState().firstCurrency}&start_at=${startDate}&end_at=${endDate}&symbols=${getState().firstCurrency},${getState().secondCurrency}`)).data.rates;
             const dateArr = [];
             for (let key in response) {
                 dateArr.push({ id: key, values: response[key] });
@@ -114,6 +114,13 @@ export const retrieveRangedDates = (startDate, endDate) => {
         catch (error) {
             console.log(error);
         }
+    };
+};
+
+export const saveConvertAmount = (amount) => {
+    return {
+        type: actionTypes.SAVE_CONVERT_AMOUNT,
+        amount
     };
 };
 

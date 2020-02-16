@@ -11,7 +11,8 @@ const intialState = {
     limitedRates: [],
     firstCurrency: null,
     secondCurrency: null,
-    dates: []
+    dates: [],
+    convertAmount: 0
 }
 
 const reducer = (state = intialState, action) => {
@@ -89,6 +90,12 @@ const reducer = (state = intialState, action) => {
             return {
                 ...state,
                 dates: action.dates
+            }
+
+        case actionTypes.SAVE_CONVERT_AMOUNT:
+            return {
+                ...state,
+                convertAmount: action.amount
             }
 
         default:

@@ -8,6 +8,49 @@
     padding-left: 6rem;
     margin-bottom: 3rem;
 
+    //1520px
+    @media only screen and (max-width: 95em) {
+        padding-left: 4rem;
+    }
+
+    //1460px
+    @media only screen and (max-width: 91.25em) {
+        padding-left: 3rem;
+    }
+
+    //1385px
+    @media only screen and (max-width: 91.25em) {
+        padding-left: 2rem;
+    }
+
+    //1120px
+    @media only screen and (max-width: 70em) {
+        padding-left: 1.5rem;
+    }
+
+    //1000px
+    @media only screen and (max-width: 62.5em) {
+        padding-left: 6rem;
+    }
+
+    //800px
+    @media only screen and (max-width: 50em) {
+        padding-left: 4rem;
+    }
+
+    //770px
+    @media only screen and (max-width: 48.13em) {
+        padding-left: 3.5rem;
+        height: 9rem;
+    }
+
+    //690px
+    @media only screen and (max-width: 43.13em) {
+        padding-left: 2rem;
+    }
+
+
+
     &__nation {
         height: 10rem;
         width: 10rem;
@@ -22,6 +65,101 @@
         height: 100%;
         color: var(--charcoal-black);
         margin-right: auto;
+
+        //1440px
+        @media only screen and (max-width: 90em) {
+            margin-left: 2rem;
+        }
+
+        //1170px
+        @media only screen and (max-width: 73.13em) {
+            width: 69%;
+        }
+
+        //1120px
+        @media only screen and (max-width: 70em) {
+            width: 68%;
+        }
+
+        //1070px
+        @media only screen and (max-width: 66.86em) {
+            width: 65%;
+        }
+
+        //800px
+        @media only screen and (max-width: 50em) {
+            width: 63%;
+        }
+
+        //770px
+        @media only screen and (max-width: 48.13em) {
+            width: 63%;
+        }
+
+        //730px
+        @media only screen and (max-width: 45.63em) {
+            width: 61%;
+        }
+
+        //690px
+        @media only screen and (max-width: 43.13em) {
+            width: 58%;
+        }
+
+        //660px
+        // @media only screen and (max-width: 41.25em) {
+        //     width: 68%;
+        // }
+
+        // //620px
+        // @media only screen and (max-width: 38.75em) {
+        //     width: 67%;
+        // }
+
+        // //600px
+        // @media only screen and (max-width: 37.5em) {
+        //     width: 63%;
+        // }
+
+        //530px
+        @media only screen and (max-width: 33.13em) {
+            width: 56%;
+        }
+
+        //490px
+        @media only screen and (max-width: 30.63em) {
+            width: 52%;
+        }
+
+        //460px
+        @media only screen and (max-width: 28.75em) {
+            width: 48%;
+        }
+
+        //430px
+        @media only screen and (max-width: 26.86em) {
+            width: 44%;
+        }
+
+        //400px
+        @media only screen and (max-width: 25em) {
+            width: 40%;
+        }
+
+        //380px
+        @media only screen and (max-width: 23.75em) {
+            width: 36%;
+        }
+
+        // //360px
+        // @media only screen and (max-width: 22.5em) {
+        //     width: 50%;
+        // }
+
+        // //350px
+        // @media only screen and (max-width: 21.86em) {
+        //     width: 48%;
+        // }
     }
 
     &__abbreviation {
@@ -31,29 +169,54 @@
         font-weight: 300;
         padding-bottom: .8rem;
         border-bottom: 1px solid #ccc;
+
+        //770px
+        @media only screen and (max-width: 48.13em) {
+            font-size: 2rem;
+        }
     }
 
     &__comparison {
         font-size: 1.5rem;
         margin-right: 1rem;
+
+        //770px
+        @media only screen and (max-width: 48.13em) {
+            font-size: 1.7rem;
+        }
     }
 
     &__full {
         font-size: 1.2rem;
         font-weight: 600;
+
+        //770px
+        @media only screen and (max-width: 48.13em) {
+            font-size: 1.4rem;
+        }
     }
 
     &:hover>&__cross {
         width: 2.5rem;
+
+        // //1170px
+        // @media only screen and (max-width: 73.13em) {
+        //     width: 2rem;
+        // }
     }
 
     &__cross {
-        height: 3rem;
+        height: 2.5rem;
         width: 0rem;
         margin-right: .5rem;
         cursor: pointer;
         fill: var(--charcoal-black);
         transition: all .5s;
+
+        // //1170px
+        // @media only screen and (max-width: 73.13em) {
+        //     height: 2rem;
+        // }
     }
 
     .Nation__holder {

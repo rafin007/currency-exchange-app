@@ -15,6 +15,11 @@
 .currencies__header {
     margin-left: 3rem;
     margin-right: auto;
+
+    //600px
+    @media only screen and (max-width: 37.5em) {
+        margin-left: 0;
+    }
 }
 
 .currencies__value {

@@ -7,12 +7,23 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        //600px
+        @media only screen and (max-width: 37.5em) {
+            justify-content: space-between;
+            margin: 5rem 1rem;
+        }
     }
 
     &__icon {
         height: 2.5rem;
         width: 2.5rem;
         fill: var(--color-dark-1);
+    }
+
+    //500px
+    @media only screen and (max-width: 31.25em) {
+        margin-top: 8rem;
     }
 }
 
@@ -22,6 +33,18 @@
     margin-bottom: 3rem;
     color: #fff;
     font-size: 1.3rem;
+
+    //600px
+    @media only screen and (max-width: 37.5em) {
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    //500px
+    @media only screen and (max-width: 31.25em) {
+        margin-bottom: 8rem;
+    }
 
     &__period {
         height: 3.5rem;
@@ -38,5 +61,21 @@
             transform: translateY(-3px);
             box-shadow: 0 .3rem 1rem rgba(#000, .7);
         }
+
+        &:focus {
+            outline: none;
+        }
     }
 }
+
+// #myChart {
+
+// .Chart {
+
+//     //500px
+//     position: relative;
+
+//     @media only screen and (max-width: 31.25em) {
+//         height: 50rem;
+//     }
+// }

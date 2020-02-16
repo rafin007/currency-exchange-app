@@ -10,6 +10,7 @@ const ConvertedCurrency = props => {
     const [currentRate, setCurrentRate] = useState(0);
 
     const baseCurrency = useSelector(state => state.baseCurrency);
+    const convertAmount = useSelector(state => state.convertAmount);
 
     useEffect(() => {
         axios.get(`https://free.currconv.com/api/v7/convert?apiKey=cadab762875dc10f460a&q=${baseCurrency ? baseCurrency : 'USD'}_${props.currency}&compact=ultra`).then(response => {
@@ -21,7 +22,7 @@ const ConvertedCurrency = props => {
     return (
         <div className={classes.Convert__currencies} key={props.currency} >
             <span className={classes.currencies__header} >{props.full}</span>
-            <span className={classes.currencies__value} >{props.value ? props.value : '0'} {baseCurrency ? baseCurrency : 'USD'} = {(currentRate * props.value).toFixed(3)} {props.currency}</span>
+            <span className={classes.currencies__value} >{convertAmount ? convertAmount : '0'} {baseCurrency ? baseCurrency : 'USD'} = {(currentRate * convertAmount).toFixed(3)} {props.currency}</span>
         </div>
     );
 }

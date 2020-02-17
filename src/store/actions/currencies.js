@@ -2,7 +2,6 @@ import * as actionTypes from './actionTypes';
 import { axiosLatestLimited, axiosSymbols } from '../../axios-requests';
 
 import axios from 'axios';
-import { act } from 'react-dom/test-utils';
 
 export const searching = (value) => {
     return {
@@ -127,4 +126,4 @@ export const saveConvertAmount = (amount) => {
 
 //---------------------- NEW API -----------------------------
 
-const API_KEY = 'cadab762875dc10f460a';
+// const API_KEY = 'cadab762875dc10f460a';

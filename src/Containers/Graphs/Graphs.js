@@ -34,14 +34,15 @@ const Graphs = props => {
                 datasets: [{
                     label: `${firstCurrency && secondCurrency ? `1 ${firstCurrency} = ${secondCurrency}` : ''}`,
                     data: dates.map(date => date.values[secondCurrency]),
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
+                    backgroundColor: dates.map(date => `rgba(${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, 0.2)`),
+                    // [
+                    //     'rgba(255, 99, 132, 0.2)',
+                    //     'rgba(54, 162, 235, 0.2)',
+                    //     'rgba(255, 206, 86, 0.2)',
+                    //     'rgba(75, 192, 192, 0.2)',
+                    //     'rgba(153, 102, 255, 0.2)',
+                    //     'rgba(255, 159, 64, 0.2)'
+                    // ],
                     borderWidth: 0
                 }]
             },
@@ -57,9 +58,9 @@ const Graphs = props => {
         });
 
 
-        const chart = document.getElementById('myChart');
+        // const chart = document.getElementById('myChart');
 
-        let mq = window.matchMedia('(max-width: 31.25em)');
+        // let mq = window.matchMedia('(max-width: 31.25em)');
 
         // if (mq.matches) {
         //     chart.style.height = `40rem`;
@@ -86,7 +87,6 @@ const Graphs = props => {
         <div className={classes.Graphs} >
 
             <div className={classes.Time} >
-                <div className={classes.Time__period} onClick={() => { dateChangedHandler(3) }} >3 D</div>
                 <div className={classes.Time__period} onClick={() => { dateChangedHandler(7) }} >1 W</div>
                 <div className={classes.Time__period} onClick={() => { dateChangedHandler(30) }} >1 M</div>
                 <div className={classes.Time__period} onClick={() => { dateChangedHandler(90) }} >3 M</div>

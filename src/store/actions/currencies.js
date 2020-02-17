@@ -24,12 +24,12 @@ const saveLimitedRates = (rates) => {
     };
 };
 
-const saveRatesFailed = (error) => {
-    return {
-        type: actionTypes.SAVE_RATES_FAILED,
-        error
-    };
-};
+// const saveRatesFailed = (error) => {
+//     return {
+//         type: actionTypes.SAVE_RATES_FAILED,
+//         error
+//     };
+// };
 
 export const addNation = (nation) => {
     return {
@@ -48,12 +48,15 @@ export const deleteNation = (nation) => {
 export const retrieveRates = () => {
     return async dispatch => {
         try {
-            const symbols = (await axiosSymbols.get()).data.symbols;
+            // const symbols = (await axiosSymbols.get()).data.symbols;
 
+            const symbols = (await axiosSymbols.get()).data.results;
+            // console.log(Object.entries(symbols));
+            // console.log(Object.entries(arr));
             dispatch(saveRates(symbols));
         }
         catch (error) {
-            dispatch(saveRatesFailed(error));
+            console.log(error);
         }
     };
 };
@@ -66,7 +69,7 @@ export const retrieveLimitedRates = () => {
             dispatch(saveLimitedRates(limitedRates));
         }
         catch (error) {
-            dispatch(saveRatesFailed(error));
+            console.log(error);
         }
     };
 };

@@ -2,8 +2,6 @@ import * as actionTypes from '../actions/actionTypes';
 
 const intialState = {
     symbols: [],
-    loading: false,
-    error: null,
     searchedRates: [],
     searchedSymbols: [],
     nations: [],
@@ -20,13 +18,20 @@ const reducer = (state = intialState, action) => {
 
         case actionTypes.SEARCHING:
 
-            // console.log(state.rates[0]);
+            // console.log(Object.entries(state.symbols[0]));
 
             return {
                 ...state,
-                loading: false,
+                // searchedSymbols: action.value !== '' ? Object.entries(state.symbols[0]).filter(symbol => {
+                //     if (symbol[0].toString().includes(action.value.toUpperCase()) || symbol[1].toString().toUpperCase().includes(action.value.toUpperCase())) {
+                //         return symbol;
+                //     }
+                //     else {
+                //         return null;
+                //     }
+                // }) : ''
                 searchedSymbols: action.value !== '' ? Object.entries(state.symbols[0]).filter(symbol => {
-                    if (symbol[0].toString().includes(action.value.toUpperCase()) || symbol[1].toString().toUpperCase().includes(action.value.toUpperCase())) {
+                    if (symbol[0].toString().includes(action.value.toUpperCase()) || symbol[1].currencyName.toString().toUpperCase().includes(action.value.toUpperCase())) {
                         return symbol;
                     }
                     else {
@@ -49,9 +54,11 @@ const reducer = (state = intialState, action) => {
             }
 
         case actionTypes.SAVE_RATES:
+            // const arr = [];
+            // arr.concat(action.symbols);
+            // console.log(Object.entries(arr[0]));
             return {
                 ...state,
-                error: null,
                 symbols: state.symbols.concat(action.symbols)
             }
 
@@ -60,12 +67,6 @@ const reducer = (state = intialState, action) => {
             return {
                 ...state,
                 limitedRates: state.limitedRates.concat(action.rates)
-            }
-
-        case actionTypes.SAVE_RATES_FAILED:
-            return {
-                ...state,
-                error: action.error
             }
 
         case actionTypes.SAVE_BASE_CURRENCY:

@@ -55,7 +55,7 @@ const Header = props => {
                 {searchedSymbols !== '' ? searchedSymbols.map(symbol => {
                     return (
                         <div className={classes.Header__searchResults__result} key={symbol[0]} onClick={() => { addNation(symbol[0]) }} >
-                            {symbol[0]} : {symbol[1]}
+                            {symbol[0]} : {symbol[1].currencyName}
                         </div>
                     );
                 }) : null}

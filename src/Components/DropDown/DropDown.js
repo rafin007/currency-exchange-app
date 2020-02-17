@@ -13,9 +13,23 @@ const DropDown = props => {
 
     const dispatch = useDispatch();
 
-    for (let key in props.symbols[0]) {
-        countries.push({ nation: key, name: props.symbols[0][key] });
+    // for (let key in props.symbols[0]) {
+    //     countries.push({ nation: key, name: props.symbols[0][key] });
+    // }
+
+    // console.log(props.symbols[0]);
+
+    if (props.location.pathname === '/compare') {
+        for (let key in props.symbols[0]) {
+            countries.push({ nation: key, name: props.symbols[0][key] });
+        }
     }
+    else {
+        for (let key in props.symbols[0]) {
+            countries.push({ nation: key, name: props.symbols[0][key].currencyName });
+        }
+    }
+
 
     const dropDownHandler = (event) => {
         if (props.location.pathname !== '/compare') {

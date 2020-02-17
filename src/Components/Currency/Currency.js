@@ -20,6 +20,9 @@ const Currency = props => {
         dispatch(actions.deleteNation(nation));
     }
 
+    // cadab762875dc10f460a
+    // 6bcb5cf30505f3022f97
+
 
     useEffect(() => {
         axios.get(`https://free.currconv.com/api/v7/convert?q=${baseCurrency ? baseCurrency : 'USD'}_${props.currency}&compact=ultra&apiKey=cadab762875dc10f460a`).then(response => {

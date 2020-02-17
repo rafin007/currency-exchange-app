@@ -2,7 +2,7 @@ export const SEARCHING = 'SEARCHING';
 export const SEARCHING_WAIT = 'SEARCHING_WAIT';
 
 export const SAVE_RATES = 'SAVE_RATES';
-export const SAVE_RATES_FAILED = 'SAVE_RATES_FAILED';
+// export const SAVE_RATES_FAILED = 'SAVE_RATES_FAILED';
 
 export const SAVE_LIMITED_RATES = 'SAVE_LIMITED_RATES';
 

@@ -70,6 +70,8 @@ const Graphs = props => {
 
     }, [dispatch, dates])
 
+    // console.log(limitedRates);
+
     const dateChangedHandler = (days) => {
         const date = new Date();
         date.setDate(date.getDate() - days);

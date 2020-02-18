@@ -12,8 +12,8 @@ const Header = props => {
     const dispatch = useDispatch();
 
     const searchedSymbols = useSelector(state => state.searchedSymbols);
-    const nations = useSelector(state => state.nations)
-    const symbols = useSelector(state => state.symbols)
+    const nations = useSelector(state => state.nations);
+    const symbols = useSelector(state => state.symbols);
 
     const onTypedHandler = (event) => {
         dispatch(actions.searching(event.target.value));

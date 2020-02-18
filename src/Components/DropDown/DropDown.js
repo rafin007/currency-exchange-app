@@ -13,12 +13,6 @@ const DropDown = props => {
 
     const dispatch = useDispatch();
 
-    // for (let key in props.symbols[0]) {
-    //     countries.push({ nation: key, name: props.symbols[0][key] });
-    // }
-
-    // console.log(props.symbols[0]);
-
     if (props.location.pathname === '/compare') {
         for (let key in props.symbols[0]) {
             countries.push({ nation: key, name: props.symbols[0][key] });
@@ -29,6 +23,8 @@ const DropDown = props => {
             countries.push({ nation: key, name: props.symbols[0][key].currencyName });
         }
     }
+
+    countries.sort((a, b) => a.nation > b.nation ? 1 : -1);
 
 
     const dropDownHandler = (event) => {

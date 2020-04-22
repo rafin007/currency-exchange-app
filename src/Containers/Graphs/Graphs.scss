@@ -11,7 +11,7 @@
         //600px
         @media only screen and (max-width: 37.5em) {
             justify-content: space-between;
-            margin: 5rem 1rem;
+            margin: 5vh 1rem;
         }
     }
 
@@ -23,7 +23,7 @@
 
     //500px
     @media only screen and (max-width: 31.25em) {
-        margin-top: 8rem;
+        margin-top: 6vh;
     }
 }
 
@@ -43,7 +43,7 @@
 
     //500px
     @media only screen and (max-width: 31.25em) {
-        margin-bottom: 8rem;
+        margin-bottom: 7vh;
     }
 
     &__period {
@@ -70,12 +70,12 @@
 
 // #myChart {
 
-// .Chart {
+.Chart {
 
-//     //500px
-//     position: relative;
+    height: 40rem;
 
-//     @media only screen and (max-width: 31.25em) {
-//         height: 50rem;
-//     }
-// }
+    // 770px
+    @media only screen and (max-width: 48.13em) {
+        height: 50vh;
+    }
+}

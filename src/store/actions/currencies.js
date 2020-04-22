@@ -102,6 +102,14 @@ const getRangedDates = (dates) => {
     };
 };
 
+export const saveDates = (startDate, endDate) => {
+    return {
+        type: actionTypes.SAVE_DATES,
+        startDate,
+        endDate
+    };
+};
+
 export const retrieveRangedDates = (startDate, endDate) => {
     return async (dispatch, getState) => {
         try {

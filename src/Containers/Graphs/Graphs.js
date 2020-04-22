@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Chart from 'chart.js';
+import { Line } from 'react-chartjs-2';
 import classes from './Graphs.scss';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -22,66 +22,55 @@ const Graphs = props => {
 
     useEffect(() => {
         dispatch(actions.retrieveLimitedRates());
-    }, [dispatch])
+    }, [dispatch]);
+
+    const lineChart = dates.length && <Line data={{
+        labels: dates.map(date => date.id),
+        datasets: [{
+            label: `${firstCurrency && secondCurrency ? `1 ${firstCurrency} = ${secondCurrency}` : ''}`,
+            data: dates.map(date => date.values[secondCurrency]),
+            backgroundColor: dates.map(date => `rgba(${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, 0.2)`),
+            fill: true
+        }],
+    }} options={{
+        responsive: true,
+        title: { text: `Comparison of ${firstCurrency} and ${secondCurrency}`, display: true },
+        maintainAspectRatio: false,
+        scales: {
+            xAxes: [
+                {
+                    gridLines: {
+                        display: false
+                    }
+                }
+            ]
+        }
+    }} />;
+
+    // const [startDate, setStartDate] = useState('');
+    // const [endDate, setEndDate] = useState('');
+
+    const startDate = useSelector(state => state.startDate);
+    const endDate = useSelector(state => state.endDate);
+
 
     useEffect(() => {
-
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: dates.map(date => date.id),
-                datasets: [{
-                    label: `${firstCurrency && secondCurrency ? `1 ${firstCurrency} = ${secondCurrency}` : ''}`,
-                    data: dates.map(date => date.values[secondCurrency]),
-                    backgroundColor: dates.map(date => `rgba(${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, ${Math.floor(Math.random() * 255) + 1}, 0.2)`),
-                    // [
-                    //     'rgba(255, 99, 132, 0.2)',
-                    //     'rgba(54, 162, 235, 0.2)',
-                    //     'rgba(255, 206, 86, 0.2)',
-                    //     'rgba(75, 192, 192, 0.2)',
-                    //     'rgba(153, 102, 255, 0.2)',
-                    //     'rgba(255, 159, 64, 0.2)'
-                    // ],
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
-            }
-        });
-
-
-        // const chart = document.getElementById('myChart');
-
-        // let mq = window.matchMedia('(max-width: 31.25em)');
-
-        // if (mq.matches) {
-        //     chart.style.height = `40rem`;
-        //     chart.style.width = '100%';
-        // }
-
-
-    }, [dispatch, dates])
-
-    // console.log(limitedRates);
+        if (firstCurrency && secondCurrency) {
+            dispatch(actions.retrieveRangedDates(startDate, endDate));
+        }
+    }, [startDate, endDate, firstCurrency, secondCurrency, dispatch]);
 
     const dateChangedHandler = (days) => {
         const date = new Date();
         date.setDate(date.getDate() - days);
 
+        // setStartDate(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+        // setEndDate(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
+
         const startDate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
         const endDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
 
-        if (firstCurrency && secondCurrency) {
-            dispatch(actions.retrieveRangedDates(startDate, endDate));
-        }
+        dispatch(actions.saveDates(startDate, endDate));
     }
 
 
@@ -111,7 +100,7 @@ const Graphs = props => {
             </div>
 
             <div className={classes.Chart} >
-                <canvas id="myChart" ></canvas>
+                {lineChart ? lineChart : null}
             </div>
         </div>
     );
